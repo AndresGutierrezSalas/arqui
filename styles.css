@@ -1,0 +1,473 @@
+*{
+    background:#fafafa;
+  }
+  
+  body {
+    padding: 0;
+    margin:0; 
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+      'Arial', sans-serif;
+    background-color: #111;
+    overflow-x: hidden;
+  }
+  
+  h1{
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  input{
+    border: 1px solid;
+    text-align: center;
+  }
+  
+  .container {
+    padding: 0 2rem;
+    
+  }
+  .containerI{
+    position: initial;
+  }
+  .containerI2 {
+    display: flex;
+  }
+  .ghost-button { 
+    display: inline-block; 
+    width: 200px; 
+    padding: 8px; 
+    color: #fff; 
+    border: 1px solid #fff; 
+    text-align: center;
+    outline: none;
+    text-decoration: none; 
+  }
+  .containerI .btn {
+    position: absolute;
+    background: none;
+    border-radius: 70px;
+    max-width: 100px;
+    /* border: 2px solid; */
+    
+  }
+  
+  .containerI .btn:hover {
+    /* border: 2px solid black; */
+    border: none;
+    /* background-color: rgba(0,0,0,0); */
+  }
+  
+  .button-container{
+    display:inline-block;
+    position:relative;
+    }
+    
+  .button-container a{
+  position: absolute;
+  bottom:4em;
+  right:4em;
+  background-color:#8F0005;
+  border-radius:1.5em;
+  color:white;
+  text-transform:uppercase;
+  padding:1em 1.5em;
+  }
+  
+  
+  .main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer {
+    display: flex;
+    flex: 1;
+    padding: 2rem 0;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .title a {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .title a:hover,
+  .title a:focus,
+  .title a:active {
+    text-decoration: underline;
+  }
+  
+  .title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+  }
+  
+  .title,
+  .description {
+    text-align: center;
+  }
+  
+  .description {
+    margin: 4rem 0;
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+  
+  .code {
+    background: #fafafa;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+      Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+  /*
+  * Estilo barra busqueda incio
+  */
+  
+  .Scontainer{
+    position: absolute;
+    left: 55%;
+    top: 130px;
+  }
+  .Scontainer input{
+    opacity: 0;
+    position:absolute;
+    outline: none;
+    box-sizing: border-box;
+    right: 0px;
+    width: 0;
+    height:50px;
+    padding: 0 20px;
+    color: rgb(0, 0, 0);;
+    border-radius: 50px;
+    font-size: 20px;
+    border:1px solid #155 ;
+    transition: all 0.6s ease;
+  }
+  .Scontainer .Sbuton{
+    position: absolute;
+    right:1px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    background:linear-gradient(90deg, rgba(140,180,136,1) 35%, rgba(137,212,227,1) 100%);
+    border-radius:50px ;
+    cursor: pointer;
+  }
+  .Scontainer .Sbuton .Sicon{
+    opacity: 1;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  .Scontainer .S2icon{
+    opacity: 0;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  
+  .Scontainer:hover input{
+    opacity: 1;
+    width: 300px;
+    transition: 1s;
+  }
+  .Scontainer:hover .Sicon{
+    opacity: 0;
+  }
+  .Scontainer:hover .S2icon{
+    opacity: 1;
+  }
+  .Scontainer:focus input{
+    opacity: 1;
+    width: 300px;
+  }
+  
+  /*
+  * Estilo barra busqueda final
+  */
+  
+  /* Inicio Grid y cards*/
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+  }
+  
+  .card{
+    margin: 0.3rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  }
+  .card .card-content{
+    position: absolute;
+    content: hidden;
+    overflow: hidden;
+    text-align: center; 
+    left: 0px;
+    right: 0px;
+    bottom:0px;
+    width: 300px;
+    height: 0;
+    background: linear-gradient(90deg, rgb(33, 26, 171) 0%, rgba(195,196,238,1) 0%, rgba(140,180,136,1) 35%, rgba(137,212,227,1) 100%);
+    opacity: 0;
+    transition: 1s height;
+  }
+  
+  .card-info h2{
+    font-weight: bold;
+  }
+  .card-info a{
+    font-weight: normal;
+    text-decoration: underline;
+  }
+  
+  .Container_grid:hover .card{
+    transition: 0.5s;
+  }
+  
+  .Container_grid:hover .card:hover{
+    filter: blur(0px);
+    transition: 0.1s;
+  
+  }
+  
+  
+  .card:hover .card-content {
+    opacity: 1;
+    transition: 2s ;
+    height: 55px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .text-content{
+    display: flexbox;
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: 400;
+    opacity: 1;
+    color: #111;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 1em;
+    margin-left: 0.5rem;
+  }
+  
+  #MenuBarra{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(33, 26, 171) 0%, rgba(195,196,238,1) 0%, rgba(140,180,136,1) 35%, rgba(137,212,227,1) 100%);  
+  }
+  
+  #searchBar{
+    margin-left: 50rem;
+    margin-right: 50rem;
+    margin-top: 2rem;
+  }
+  
+  
+  #menuFooter{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(31, 23, 170) 0%, rgba(195,196,238,1) 0%, rgba(140,180,136,1) 35%, rgba(137,212,227,1) 100%);  
+  }
+  
+  #menuFooter #FooterButton{
+    
+    margin-top: 35px;
+    margin-left: 300px;
+  
+  }
+  
+  #list{
+    padding-top: 30px;
+  }
+  #map{
+    margin-right: 40px;
+  }
+  
+  #list{
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    top: 100px;
+  }
+  
+  .Home{
+    width: 100%;
+    height: 100%;
+  } 
+  
+  /* Pagina inicio slide */
+  
+  .slider{
+    width: 1540px;
+    height: 530px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 400px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  
+  }
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 1540px;
+    height: 530px;
+  }
+  /* slide manual */
+  .navegacionManual{
+      position: absolute;
+      width: 800px;
+      margin-top: 50px;
+      display: flex;
+      margin-left: 680px;
+  
+  
+  }
+  .botonManual{
+    border: 2px solid  #42fc94 ;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .botonManual:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .botonManual:hover{
+    background: #42fc94;
+  }
+  
+  #btn1:checked ~ .first{
+    margin-left: 0;
+  }
+  #btn2:checked ~ .first{
+    margin-left: -20%;
+  }
+  #btn3:checked ~ .first{
+    margin-left: -40%;
+  }
+  #btn4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /* slide automatico */
+  
+  .navegacionAuto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    margin-top: 450px;
+    margin-left: 680px;
+  }
+  
+  .navegacionAuto div{
+    border: 2px solid #42fc94; 
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navegacionAuto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #btn1:checked ~ .navegacionAuto .autoBoton1{
+    background: #42fc94;
+  }
+  #btn2:checked ~ .navegacionAuto .autoBoton2{
+    background: #42fc94;
+  }
+  #btn3:checked ~ .navegacionAuto .autoBoton3{
+    background: #42fc94;
+  }
+  #btn4:checked ~ .navegacionAuto .autoBoton4{
+    background: #42fc94;
+  }
+  
+  .listCar{
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+  }
+  .listCar li{
+    padding-top: 20px;
+  }
+  .listCar h2{
+    font-size:xx-large;   
+  }
+  
+  .listCar a{
+    color: #0070f3;
+  }
+  
+  .uachContent{
+    display:flex;
+    padding-left: 120px;  
+    margin-top: 50px;
+    
+  }
+  .miraflores p{
+    font-size: larger;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .infraestuctura p{
+    font-size: larger;
+    padding: 3px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .busqueda{
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-bottom: 430px;
+  }
+  
