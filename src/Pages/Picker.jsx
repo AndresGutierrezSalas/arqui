@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import DatosComponet from './DatosComponet';
-import ConsultaTable from '../ConsultaTable';
 import GetConsultas from '../GetConsultas';
 import axios from 'axios';
 

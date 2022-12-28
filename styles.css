@@ -11,6 +11,13 @@
     overflow-x: hidden;
   }
   
+  .Agenda {
+    text-align: justify;
+    margin: 25px 0;
+    background-color: #8F0005;
+    border-radius: 10px;
+  }
+
   h1{
     text-align: center;
     padding-bottom: 10px;
