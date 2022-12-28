@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import GetConsultas from '../GetConsultas';
 import axios from 'axios';
+import raw from '../../database/disponsible_horarios.txt';
+
+{/* Input "Database" from the Secretaria FCI about dates*/}
+var all_dates = "";
+fetch(raw)
+  .then(r => r.text())
+  .then(text => {
+    all_dates = text;
+    all_dates = all_dates.split("#");
+    for (var i = 0; i < all_dates.length; i++){
+      var optionText = all_dates[i].split(";");
+      $('#timeselector').append(`<option value="${optionText[1]}"> ${optionText[1]} </option>`);
+    }
+  
+  });
 
 const Picker = () => {
   const [date, setDate] = useState('');
@@ -64,13 +79,13 @@ const Picker = () => {
       
       <form onSubmit={handleSubmit}>
             <label>Nombre del estudiante:</label><br/>
-            <input type="text" value={studentName} onChange={handleStudentName} /><br/>
+            <input type="text" class="btn btn-outline-primary" value={studentName} onChange={handleStudentName} /><br/>
             <label>Nombre del profesor:</label><br/>
-            <input type="text" value={teacherName} onChange={handleTeacherName} /><br/>
+            <input type="text" class="btn btn-outline-primary" value={teacherName} onChange={handleTeacherName} /><br/>
             <label>Email del estudiante:</label><br/>
-            <input type="text" value={studentEmail} onChange={handleStudentEmail} /><br/>
+            <input type="text" class="btn btn-outline-primary" value={studentEmail} onChange={handleStudentEmail} /><br/>
             <label>Email del profesor:</label><br/>
-            <input type="text" value={teacherEmail} onChange={handleTeacherEmail} /><br/>
+            <input type="text" class="btn btn-outline-primary" value={teacherEmail} onChange={handleTeacherEmail} /><br/>
 
 
             <label>Dia y hora para presentar su examen de grado:</label><br/>
@@ -79,16 +94,10 @@ const Picker = () => {
               value={date}
               onChange={(e) => setDate(e.target.value)} />
             
-            <select onChange={(e) => setTime(e.target.value)}>
-              <option value="09:00:00">09:00 am</option>
-              <option value="10:00:00">10:00 am</option>
-              <option value="11:00:00">11:00 am</option>
-              <option value="12:00:00">12:00 pm</option>
-              <option value="14:00:00">14:00 pm</option>
-              <option value="15:00:00">15:00 pm</option>
+            <select id="timeselector" onChange={(e) => setTime(e.target.value)}>
           </select><br/><br/>
 
-            <button type="submit" onClick={handleSubmit} >Guardar</button>
+            <button type="submit" id="timeselector" class="btn btn-primary" onClick={handleSubmit} >Guardar</button>
         </form>
 
 
