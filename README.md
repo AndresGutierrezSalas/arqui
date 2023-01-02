@@ -1,6 +1,6 @@
 # Trazabilidad
 
-<h1>Si se descarga el proyecto desde 0, hay que hacer npm i, e instalar la base de datos.</h1>
+<h1>Si se descarga el proyecto desde 0, hay que hacer npm i, e instalar la base de datos, la base de datos es el archivo test.sql.</h1>
 
 <p>Para instalar la base de datos, entrar por consola al cliente sql, y ejecutar "source (path del archivo);" </p>
 
