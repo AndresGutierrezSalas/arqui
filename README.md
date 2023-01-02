@@ -1,8 +1,10 @@
 # Trazabilidad
 
-<h1>Para instalar la base de datos, entrar por consola al cliente sql, y ejecutar "source "path del archivo";" </h1>
+<h1>Si se descarga el proyecto desde 0, hay que hacer npm i, e instalar la base de datos.</h1>
 
-<h1>Para levantar el servidor,en la consolae jecutar "node index.js"</h1>
-<h1>Para levantar el Frontend "npm run dev"</h1>
+<p>Para instalar la base de datos, entrar por consola al cliente sql, y ejecutar "source (path del archivo);" </p>
 
-<h1>todos esos comenados deben ejecutarse estando  dentro de la carpeta /Trazabilidad</h1>
+<p>Para levantar el servidor, en la consola ejecutar "node index.js"</p>
+<p>Para levantar el Frontend, en la consola ejecutar "npm run dev"</p>
+
+<p>todos esos comanados deben ejecutarse estando  dentro de la carpeta /Trazabilidad</p>
