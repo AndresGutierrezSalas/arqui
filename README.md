@@ -1,6 +1,15 @@
-# Trazabilidad
+# Sistema de trazabilidad de exámenes de titulación FCI
+## Integrantes del grupo:
+* Diego Agüero
+* Francisco Aranda
+* Natalia Cárcamo
+* Andrés Gutiérrez
+* Javier Mansilla
+* Álvaro Navarro
+* Claudio Pinilla
+* Felipe Soto
 
-<h1>Si se descarga el proyecto desde 0, hay que hacer npm i, e instalar la base de datos, la base de datos es el archivo test.sql.</h1>
+<h1>Si se descarga el proyecto desde 0, por favor ejecutar npm i, e instalar la base de datos (archivo test.sql.)</h1>
 
 <p>Para instalar la base de datos, entrar por consola al cliente sql, y ejecutar "source (path del archivo);" </p>
 

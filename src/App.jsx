@@ -1,10 +1,7 @@
-import Picker from './Pages/Picker';
+import Picker from "./Pages/Picker";
 
 function App() {
-
-  return (
-      <Picker></Picker>
-  )
+  return <Picker></Picker>;
 }
 
-export default App
+export default App;
