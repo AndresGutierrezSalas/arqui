@@ -62,7 +62,7 @@ const Picker = () => {
 
     // Aquí se envía los datos guardados al servidor
     axios
-      .post("http://host.docker.internal:3000/createConsulta", data)
+      .post("http://localhost:3000/createConsulta", data)
       .then((res) => {
         console.log(res);
       })
