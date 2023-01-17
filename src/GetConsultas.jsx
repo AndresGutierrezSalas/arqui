@@ -6,7 +6,7 @@ const GetConsultas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/getConsultas")
+      .get("http://host.docker.internal:3000/getConsultas")
       .then(response => setData(response.data))
       .catch(err => console.log(err));
   }, []);
