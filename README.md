@@ -9,6 +9,7 @@
 * Claudio Pinilla
 * Felipe Soto
 * Victor Moya
+* Fabrizio Fresard
 
 <h1>Si se descarga el proyecto desde 0, por favor ejecutar npm i, e instalar la base de datos (archivo test.sql.)</h1>
 
