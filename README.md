@@ -21,12 +21,8 @@
 
 
 <p>Los comandos para ejecutarlos en docker son:</p>
-<p>en /api</p>
-<p>* docker build -t api-img .</p>
-<p>* docker run -p 3000:3000 --name api-cnt api-img</p>
-
-<p>en /app</p>
-<p>* docker build -t app-img .</p>
-<p>* docker run -p 5173:5173 app-cnt app-img</p>
+<p>en la carpeta raiz (donde se encuentra el archivo docker-compose.yml) ejecutar los siguientes comandos</p>
+<p>* docker compose build</p>
+<p>* docker compose up</p>
 
 <p>Con todo lo anterior se debe poder ejecutar la aplicacion en localhost:5173 en el navegador, incluyendo una base de datos funcional</p>
