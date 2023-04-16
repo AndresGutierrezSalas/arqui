@@ -119,7 +119,6 @@ const Picker = () => {
           type="submit"
           id="timeselector"
           className="btn-guardar"
-          onClick={handleSubmit}
         >
           Guardar
         </button>
