@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import GetConsultas from "../GetConsultas";
 import axios from "axios";
 import raw from "../../database/disponsible_horarios.txt";
 
@@ -45,13 +44,12 @@ const Picker = () => {
   };
 
   const handleSubmit = () => {
-    event.preventDefault();
     const data = {
-      nombre_alumno: studentName,
-      mail_alumno: studentEmail,
-      nombre_profesor: teacherName,
-      mail_profesor: teacherEmail,
-      fecha_hora: date + " " + time,
+      'nombre_alumno': studentName,
+      'mail_alumno': studentEmail,
+      'nombre_profesor': teacherName,
+      'mail_profesor': teacherEmail,
+      'fecha_hora': date + " " + time,
     };
     alert("Se ha guardado la información exitosamente");
     console.log("Información guardada");
@@ -62,7 +60,7 @@ const Picker = () => {
 
     // Aquí se envía los datos guardados al servidor
     axios
-      .post("http://host.docker.internal:3000/createConsulta", data)
+      .post("http://localhost:3000/agenda/", data)
       .then((res) => {
         console.log(res);
       })
@@ -126,8 +124,6 @@ const Picker = () => {
           Guardar
         </button>
       </form>
-
-      <GetConsultas></GetConsultas>
     </div>
   );
 };

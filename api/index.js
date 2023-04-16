@@ -1,41 +1,26 @@
 const express = require("express");
-const mysql = require("mysql2");
-const cors = require("cors");
-
-const pool = mysql.createPool({
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  port: 3000
-});
-
+const cors = require('cors')
 const app = express();
-
-app.use(cors());
+const port = 3000;
+const agendaRouter = require("./routes/agenda");
 app.use(express.json());
-
-app.get('/getConsultas', (req, res) => {
-  pool.query('SELECT * FROM agenda', (err, results) => {
-    if (err) throw err;
-    res.json(results);
-  });
+app.use(cors());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.get("/", (req, res) => {
+  res.json({ message: "ok" });
 });
-
-app.post('/createConsulta', (req, res) => {
-  const { nombre_alumno, mail_alumno, nombre_profesor, mail_profesor, fecha_hora } = req.body;
-  const sql = `INSERT INTO agenda (nombre_alumno, mail_alumno, nombre_profesor, mail_profesor, fecha_hora) VALUES ('${nombre_alumno}', '${mail_alumno}', '${nombre_profesor}', '${mail_profesor}', '${fecha_hora}')`;
-  pool.query(sql, (err, result) => {
-    if (err) throw err;
-    res.json({
-      message: 'Cita creada satisfactoriamente'
-    });
-  });
+app.use("/agenda", agendaRouter);
+/* Error handler middleware */
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  console.error(err.message, err.stack);
+  res.status(statusCode).json({ message: err.message });
+  return;
 });
-
-app.listen(3000, () => {
-  console.log('Server is listening on port 3');
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 });

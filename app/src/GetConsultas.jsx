@@ -6,14 +6,16 @@ const GetConsultas = () => {
 
   useEffect(() => {
     axios
-      .get("http://host.docker.internal:3000/getConsultas")
+      .get("http://localhost:3000/agenda/")
       .then(response => setData(response.data))
       .catch(err => console.log(err));
   }, []);
 
   return (
     <div>
-      {data.map(item => (
+      <h1>Consultas</h1>
+      {console.log(data)}
+      {data.data?.map(item => (
         <div  key={item.id}>
           <p>Nombre del alumno: {item.nombre_alumno}</p>
           <p>Mail del alumno: {item.mail_alumno}</p>
