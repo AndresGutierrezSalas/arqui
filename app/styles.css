@@ -8,13 +8,13 @@
     align-items: center;
     justify-content: center;
   }
-
+  /*
   @keyframes rotate {
     100%{
         background-position: 15% 50%;
     }
   }
-
+  */
   body{
     display: grid;
     place-items: center;
