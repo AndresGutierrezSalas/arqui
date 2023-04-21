@@ -6,7 +6,7 @@ describe("Test if Wikipedia's home page's title is correct", () => {
     let driver;
     beforeAll(async () => {
         driver = new Builder()
-            .usingServer('http://localhost:4444/wd/hub')
+            .usingServer('http://172.18.0.2:4444/')
             .withCapabilities(capabilities)
             .build();
         await driver.get("https://www.wikipedia.org/");
